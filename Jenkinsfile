@@ -10,7 +10,6 @@ pipeline {
         stage('Build'){
             steps{
                  sh script: 'mvn clean package'
-                 archiveArtifacts artifacts: 'target/*.war', onlyIfSuccessful: true
             }
         }
         stage('Upload War To Nexus'){
@@ -24,14 +23,14 @@ pipeline {
                             type: 'war',
                         ]
                     ]
-                    credentialsId: 'Nexus3', 
+                    credentialsId: 'Nexus3'
                     groupId: 'in.javahome', 
                     nexusUrl: '192.168.33.10:8081', 
                     nexusVersion: 'nexus3', 
                     protocol: 'http', 
                     repository: 'simpleapp-release', 
                     version: '3.0.0',
-                       }
+              }
             }
         }
     }
