@@ -15,17 +15,20 @@ pipeline {
         stage('Upload War To Nexus'){
             steps{
                 script{  
-                   nexusArtifactUploader artifacts:
-                            artifactId: 'simple-app' 
-                            classifier: ''
-                            file: "target/simple-app-3.0.0.war"
+                   nexusArtifactUploader artifacts: [
+                       [
+                            artifactId: 'simple-app',
+                            classifier: '',
+                            file: "target/simple-app-3.0.0.war",
                             type: 'war'
-                    credentialsId: 'Nexus3'
-                    groupId: 'in.javahome'
-                    nexusUrl: '192.168.33.10:8081'
-                    nexusVersion: 'nexus3'
-                    protocol: 'http'
-                    repository: 'simpleapp-release'
+                           ]
+                       ],
+                    credentialsId: 'Nexus3',
+                    groupId: 'in.javahome',
+                    nexusUrl: '192.168.33.10:8081',
+                    nexusVersion: 'nexus3',
+                    protocol: 'http',
+                    repository: 'simpleapp-release',
                     version: '3.0.0'
               }
             }
