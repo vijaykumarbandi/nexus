@@ -21,9 +21,9 @@ pipeline {
                             artifactId: 'simple-app', 
                             classifier: '', 
                             file: "target/simple-app-3.0.0.war", 
-                            type: 'war'
+                            type: 'war',
                         ]
-                    ], 
+                    ]
                     credentialsId: 'nexus3', 
                     groupId: 'in.javahome', 
                     nexusUrl: '192.168.33.10:8081', 
@@ -31,7 +31,7 @@ pipeline {
                     protocol: 'http', 
                     repository: 'simpleapp-release', 
                     version: '3.0.0',
-                    }
+                       }
             }
         }
     }
