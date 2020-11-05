@@ -17,9 +17,9 @@ pipeline {
                 script{  
                    nexusArtifactUploader artifacts: [
                        [
-                            artifactId: 'simple-app',
+                            artifactId: 'vijaynexus',
                             classifier: '',
-                            file: "target/simple-app-1.0.0-SNAPSHOT.war",
+                            file: "target/vijaynexus-1.0.0-SNAPSHOT.war",
                             type: 'war'
                            ]
                        ],
@@ -28,7 +28,7 @@ pipeline {
                     nexusUrl: '192.168.33.10:8081',
                     nexusVersion: 'nexus3',
                     protocol: 'http',
-                    repository: 'simpleapp-release',
+                    repository: 'nexrepo',
                     version: '1.0.0'
               }
             }
