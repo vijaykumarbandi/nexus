@@ -19,17 +19,17 @@ pipeline {
                        [
                             artifactId: 'vijaynexus',
                             classifier: '',
-                            file: "target/vijaynexus-1.0.0-SNAPSHOT.war",
+                            file: "target/vijaynexus-4.0.1-SNAPSHOT.war",
                             type: 'war'
                            ]
                        ],
-                    credentialsId: 'Nexus3',
+                    credentialsId: 'nexus',
                     groupId: 'in.javahome',
                     nexusUrl: '192.168.33.10:8081',
                     nexusVersion: 'nexus3',
                     protocol: 'http',
                     repository: 'nexrepo',
-                    version: '1.0.0'
+                    version: '4.0.1'
               }
             }
         }
